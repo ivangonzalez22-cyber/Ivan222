@@ -1,0 +1,110 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f7e6e6; /* Un rosa muy claro */
+    color: #333;
+    overflow: hidden; /* Evita barras de desplazamiento innecesarias */
+}
+
+.card-container {
+    perspective: 1000px; /* Para el efecto 3D si se añade después */
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 2s ease-out; /* Animación de aparición */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    color: #e91e63; /* Un rosa más intenso */
+    font-size: 2.5em;
+    margin-bottom: 25px;
+    font-family: 'Dancing Script', cursive; /* Fuente más elegante */
+    animation: slideInLeft 1s ease-out;
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+p.message {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    animation: slideInRight 1.5s ease-out;
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+p.signature {
+    font-style: italic;
+    margin-top: 30px;
+    color: #666;
+    animation: slideInUp 2s ease-out;
+}
+
+@keyframes slideInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+button {
+    background-color: #ff69b4; /* Rosa cálido */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 25px;
+    box-shadow: 0 4px 10px rgba(255, 105, 180, 0.4);
+}
+
+button:hover {
+    background-color: #e91e63; /* Rosa más oscuro al pasar el ratón */
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.hidden {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease-out, max-height 0.5s ease-out;
+    margin-top: 0;
+    visibility: hidden; /* Oculta completamente cuando está oculto */
+}
+
+.visible {
+    opacity: 1;
+    max-height: 100px; /* Suficiente para mostrar el mensaje */
+    margin-top: 15px;
+    visibility: visible;
+}
+
+/* Fuente externa para 'Dancing Script' (opcional, si quieres un estilo más manuscrito) */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
